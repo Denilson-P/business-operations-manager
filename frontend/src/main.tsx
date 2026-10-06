@@ -1,14 +1,8 @@
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 
-function App() {
-  return (
-    <main>
-      <h1>Business Operations Manager</h1>
-      <p>Application successfully initialized.</p>
-    </main>
-  )
-}
+import App from "./app"
+import "./styles.css"
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
