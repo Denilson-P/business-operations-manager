@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.routes.commissions.route import router as commissions_router
 from app.routes.inventory.route import router as inventory_router
+from app.routes.interest.route import router as interest_router
 
 
 
@@ -29,4 +30,5 @@ def health_check() -> dict[str, str]:
 
 
 app.include_router(commissions_router)
+app.include_router(interest_router)
 app.include_router(inventory_router)
