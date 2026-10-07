@@ -145,64 +145,142 @@ tbody tr:hover {
   background: #f9fafb;
 }
 
+
+/* Forms */
+
 form {
   display: grid;
-  gap: 1rem;
-  margin-top: 1rem;
+  max-width: 600px;
+  margin-top: 20px;
+  gap: 20px;
 }
 
 form div {
-  display: grid;
-  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 label {
+  color: #374151;
+  font-size: 14px;
   font-weight: 600;
 }
 
 input,
 select {
   width: 100%;
-  padding: 0.75rem;
+  padding: 11px 12px;
   border: 1px solid #d1d5db;
-  border-radius: 0.5rem;
+  border-radius: 8px;
+  outline: none;
   background: #ffffff;
+  color: #111827;
 }
+
+input:focus,
+select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 12%);
+}
+
+
+/* Buttons */
 
 form button {
-  margin-top: 0.5rem;
-}
-
-.inventory-stock {
+  width: fit-content;
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
   font-weight: 600;
 }
 
+form button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+
+/* Result sections */
+
+section {
+  margin-top: 28px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #f9fafb;
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+section p {
+  margin: 10px 0;
+  color: #4b5563;
+}
+
+/* Inventory */
+
+.inventory-stock {
+  display: inline-flex;
+  min-width: 44px;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #3730a3;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* Feedback */
+
+.error-message {
+  margin: 16px 0;
+  padding: 12px 16px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+
+/* Result */
+
 .result-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-top: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
 }
 
 .result-item {
-  padding: 1rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 0.5rem;
+  padding: 14px;
+  border-radius: 8px;
+  background: #ffffff;
 }
 
 .result-item span {
   display: block;
-  margin-bottom: 0.25rem;
-  font-size: 0.875rem;
+  margin-bottom: 6px;
+  color: #6b7280;
+  font-size: 13px;
 }
 
 .result-item strong {
-  font-size: 1rem;
+  color: #111827;
+  font-size: 16px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 600px) {
   .result-grid {
     grid-template-columns: 1fr;
   }
 }
-
