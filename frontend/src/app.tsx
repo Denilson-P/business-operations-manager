@@ -1,10 +1,11 @@
 import { useState } from "react"
 
+import { Interest } from "./pages/Interest"
 import { Commissions } from "./pages/Commissions"
 import { Inventory } from "./pages/Inventory"
 
 
-type Page = "commissions" | "inventory"
+type Page = "commissions" | "inventory" | "interest"
 
 
 function App() {
@@ -34,11 +35,21 @@ function App() {
           >
             Inventory
           </button>
+
+          <button
+            className={
+              currentPage === "interest" ? "active" : ""
+            }
+            onClick={() => setCurrentPage("interest")}
+          >
+            Interest
+          </button>
         </nav>
       </header>
 
       {currentPage === "commissions" && <Commissions />}
       {currentPage === "inventory" && <Inventory />}
+      {currentPage === "interest" && <Interest />}
     </>
   )
 }
